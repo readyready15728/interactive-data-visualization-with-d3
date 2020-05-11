@@ -26,3 +26,21 @@ svg.selectAll('rect')
   .attr('fill', (d) => {
     return 'rgb(0, 0, ' + d * 10 + ')';
   });
+
+svg.selectAll('text')
+  .data(dataset)
+  .enter()
+  .append('text')
+  .text((d) => {
+    return d;
+  })
+  .attr('text-anchor', 'middle')
+  .attr('x', (d, i) => {
+    return i * w / dataset.length + (w / dataset.length - barPadding) / 2;
+  })
+  .attr('y', (d) => {
+    return h - d * 4 + 14;
+  })
+  .attr('font-family', 'sans-serif')
+  .attr('font-size', '11px')
+  .attr('fill', 'white');
