@@ -6,5 +6,5 @@ d3.select('body').selectAll('div')
   .append('div')
   .attr('class', 'bar')
   .style('height', function(d) {
-    return d + 'px'
+    return d * 5 + 'px';
   });
