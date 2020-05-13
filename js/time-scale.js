@@ -16,11 +16,11 @@ d3.csv('../data/time-scale-data.csv', rowConverter)
   .then((dataset) => {
     let xScale = d3.scaleTime()
       .domain([d3.min(dataset, (d) => { return d.date; }),
-              d3.max(dataset, (d) => { return d.date; })])
+               d3.max(dataset, (d) => { return d.date; })])
       .range([padding, w - padding]);
     let yScale = d3.scaleLinear()
       .domain([d3.min(dataset, (d) => { return d.amount; }),
-        d3.max(dataset, (d) => { return d.amount; })])
+               d3.max(dataset, (d) => { return d.amount; })])
       .range([h - padding, padding]);
 
     let svg = d3.select('body')
